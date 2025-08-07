@@ -30,7 +30,7 @@ This section provides instructions on how to configure, execute, and test the pr
    cd template/backend/src/Ambev.DeveloperEvaluation.WebApi
    dotnet run
    ```
-   The API will be available at `https://localhost:5001` and `http://localhost:5000`
+   The API will be available at `https://localhost:7181` and `http://localhost:5119`
 
 2. **Using Docker (Optional)**
    ```bash
@@ -48,7 +48,7 @@ This section provides instructions on how to configure, execute, and test the pr
    ```
 
 2. **API Testing with Swagger**
-   - Navigate to `https://localhost:5001/swagger` in your browser
+   - Navigate to `https://localhost:7181/swagger` in your browser
    - Use the Swagger UI to test the API endpoints
 
 ### API Documentation
