@@ -2,6 +2,60 @@
 
 `READ CAREFULLY`
 
+## Setup and Execution Guide
+
+This section provides instructions on how to configure, execute, and test the project.
+
+### Prerequisites
+
+- [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) or later
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Visual Studio 2022](https://visualstudio.microsoft.com/vs/) or [Visual Studio Code](https://code.visualstudio.com/) with C# extensions
+
+### Configuration
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/developer-evaluation.git
+   cd developer-evaluation
+   ```
+
+2. **Database Setup**
+   - Update the connection string in `template/backend/src/Ambev.DeveloperEvaluation.WebApi/appsettings.json`
+
+### Running the Application
+
+1. **Start the API**
+   ```bash
+   cd template/backend/src/Ambev.DeveloperEvaluation.WebApi
+   dotnet run
+   ```
+   The API will be available at `https://localhost:5001` and `http://localhost:5000`
+
+2. **Using Docker (Optional)**
+   ```bash
+   cd template/backend
+   docker-compose up -d
+   ```
+   This will start both the API and the database in Docker containers
+
+### Testing
+
+1. **Running Unit Tests**
+   ```bash
+   cd template/backend/tests
+   dotnet test
+   ```
+
+2. **API Testing with Swagger**
+   - Navigate to `https://localhost:5001/swagger` in your browser
+   - Use the Swagger UI to test the API endpoints
+
+### API Documentation
+
+The API documentation is available in the `.doc` folder:
+- [Sales API](/.doc/sales-api.md)
+
 ## Instructions
 **The test below will have up to 7 calendar days to be delivered from the date of receipt of this manual.**
 
@@ -70,15 +124,14 @@ This section outlines the frameworks and libraries that are leveraged in the pro
 
 See [Frameworks](/.doc/frameworks.md)
 
-<!-- 
 ## API Structure
 This section includes links to the detailed documentation for the different API resources:
-- [API General](./docs/general-api.md)
+- [API General](/.doc/general-api.md)
 - [Products API](/.doc/products-api.md)
 - [Carts API](/.doc/carts-api.md)
 - [Users API](/.doc/users-api.md)
 - [Auth API](/.doc/auth-api.md)
--->
+- [Sales API](/.doc/sales-api.md)
 
 ## Project Structure
 This section describes the overall structure and organization of the project files and directories. 
