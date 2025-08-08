@@ -18,23 +18,17 @@
       "sales": [
         {
           "id": "guid",
+          "saleNumber": "string",
+          "saleDate": "datetime",
           "customerId": "guid",
+          "customerName": "string",
           "branchId": "guid",
-          "date": "datetime",
+          "branchName": "string",
           "totalAmount": "decimal",
-          "items": [
-            {
-              "id": "guid",
-              "productId": "guid",
-              "quantity": "integer",
-              "unitPrice": "decimal",
-              "totalPrice": "decimal"
-            }
-          ],
-          "status": "string"
+          "status": "string (enum: Active, Cancelled)",
+          "itemCount": "integer"
         }
-      ],
-      "totalCount": "integer"
+      ]
     }
   }
   ```
@@ -45,11 +39,13 @@
   ```json
   {
     "customerId": "guid",
+    "customerName": "string",
     "branchId": "guid",
-    "date": "datetime",
+    "branchName": "string",
     "items": [
       {
         "productId": "guid",
+        "productName": "string",
         "quantity": "integer",
         "unitPrice": "decimal"
       }
@@ -63,20 +59,24 @@
     "message": "Sale created successfully",
     "data": {
       "id": "guid",
+      "saleNumber": "string",
+      "saleDate": "datetime",
       "customerId": "guid",
+      "customerName": "string",
       "branchId": "guid",
-      "date": "datetime",
+      "branchName": "string",
       "totalAmount": "decimal",
       "items": [
         {
           "id": "guid",
           "productId": "guid",
+          "productName": "string",
           "quantity": "integer",
           "unitPrice": "decimal",
-          "totalPrice": "decimal"
+          "discountPercentage": "decimal",
+          "totalAmount": "decimal"
         }
-      ],
-      "status": "string"
+      ]
     }
   }
   ```
@@ -92,30 +92,28 @@
     "message": "Sale retrieved successfully",
     "data": {
       "id": "guid",
+      "saleNumber": "string",
+      "saleDate": "datetime",
       "customerId": "guid",
+      "customerName": "string",
       "branchId": "guid",
-      "date": "datetime",
+      "branchName": "string",
       "totalAmount": "decimal",
+      "status": "string (enum: Active, Cancelled)",
+      "createdAt": "datetime",
+      "updatedAt": "datetime",
       "items": [
         {
           "id": "guid",
           "productId": "guid",
+          "productName": "string",
           "quantity": "integer",
           "unitPrice": "decimal",
-          "totalPrice": "decimal"
+          "discountPercentage": "decimal",
+          "totalAmount": "decimal",
+          "isCancelled": "boolean"
         }
-      ],
-      "status": "string",
-      "customer": {
-        "id": "guid",
-        "name": "string",
-        "email": "string"
-      },
-      "branch": {
-        "id": "guid",
-        "name": "string",
-        "location": "string"
-      }
+      ]
     }
   }
   ```
@@ -128,17 +126,17 @@
   ```json
   {
     "customerId": "guid",
+    "customerName": "string",
     "branchId": "guid",
-    "date": "datetime",
+    "branchName": "string",
     "items": [
       {
-        "id": "guid",
         "productId": "guid",
+        "productName": "string",
         "quantity": "integer",
         "unitPrice": "decimal"
       }
-    ],
-    "status": "string"
+    ]
   }
   ```
 - Response: 
@@ -148,20 +146,28 @@
     "message": "Sale updated successfully",
     "data": {
       "id": "guid",
+      "saleNumber": "string",
+      "saleDate": "datetime",
       "customerId": "guid",
+      "customerName": "string",
       "branchId": "guid",
-      "date": "datetime",
+      "branchName": "string",
       "totalAmount": "decimal",
+      "status": "string (enum: Active, Cancelled)",
+      "createdAt": "datetime",
+      "updatedAt": "datetime",
       "items": [
         {
           "id": "guid",
           "productId": "guid",
+          "productName": "string",
           "quantity": "integer",
           "unitPrice": "decimal",
-          "totalPrice": "decimal"
+          "discountPercentage": "decimal",
+          "totalAmount": "decimal",
+          "isCancelled": "boolean"
         }
-      ],
-      "status": "string"
+      ]
     }
   }
   ```
